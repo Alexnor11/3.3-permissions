@@ -5,7 +5,7 @@
 # получение объявлений
 GET {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 40b9c649c694a5200e0a37ea64a9e086a2ab53f7
+# Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
 
 
 
@@ -26,7 +26,7 @@ Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
 # создание объявления (admin)
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 11bd37b8c955b2f396db6264ffd144d7889e1f13
+Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
 
 {
   "title": "Шкаф IKEA",
@@ -39,7 +39,7 @@ Authorization: Token 11bd37b8c955b2f396db6264ffd144d7889e1f13
 # Не более 10 открытых
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 40b9c649c694a5200e0a37ea64a9e086a2ab53f7
+Authorization: Token 3a611c150bfb0c831a046df113bd82c676cfc794
 
 {
   "title": "Диван IKEA",
@@ -49,10 +49,11 @@ Authorization: Token 40b9c649c694a5200e0a37ea64a9e086a2ab53f7
 ###
 
 
-# попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/17/
+# попытка поменять объявление# попытка поменять объявление
+PATCH {{baseUrl}}/advertisements/5/
 Content-Type: application/json
-Authorization: Token 11bd37b8c955b2f396db6264ffd144d7889e1f13
+Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
+
 {
   "status": "CLOSED"
 }
@@ -66,13 +67,14 @@ Content-Type: application/json
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2022-01-19
+GET {{baseUrl}}/advertisements/?created_at_before=2022-01-26
 Content-Type: application/json
 
 ###
 
 
 # Удаление объявления (Анонимно запрещено)
-DELETE  {{baseUrl}}/advertisements/16/
+DELETE  {{baseUrl}}/advertisements/2/
+Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
 
 
