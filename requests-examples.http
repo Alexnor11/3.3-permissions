@@ -50,7 +50,7 @@ Authorization: Token 3a611c150bfb0c831a046df113bd82c676cfc794
 
 
 # попытка поменять объявление# попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/5/
+PATCH {{baseUrl}}/advertisements/7/
 Content-Type: application/json
 Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
 
@@ -61,7 +61,7 @@ Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=1
+GET {{baseUrl}}/advertisements/?creator=2
 Content-Type: application/json
 
 ###
@@ -74,7 +74,7 @@ Content-Type: application/json
 
 
 # Удаление объявления (Анонимно запрещено)
-DELETE  {{baseUrl}}/advertisements/2/
-Authorization: Token 8a25fd8c1ff4f6193b89213d8c9130a5ed5cce49
+DELETE  {{baseUrl}}/advertisements/7/
+Authorization: Token 3a611c150bfb0c831a046df113bd82c676cfc794
 
 

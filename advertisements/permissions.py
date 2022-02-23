@@ -1,8 +1,11 @@
+from rest_framework import permissions
 from rest_framework.permissions import BasePermission
 
 
 class IsOwnerOrReadOnly(BasePermission):
+    message = 'Вы не можете совершить данную операцию'
+
     def has_object_permission(self, request, view, obj):
-        if request.method == 'GET':
+        if request.method in permissions.SAFE_METHODS:
             return True
-        return request.user == obj.creator
+        return obj.creator == request.user
